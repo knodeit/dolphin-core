@@ -1,0 +1,33 @@
+{
+    "name": "dolphin-core",
+    "version": "0.0.3",
+    "preferGlobal": true,
+    "description": "Module loader for node js",
+    "author": {
+        "name": "LPG Labs"
+    },
+    "contributors": [],
+    "license": "AGPL",
+    "main": "dolphin",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/knodeit/dolphin-core.git"
+    },
+    "engines": {
+        "node": "0.10.x",
+        "npm": "1.4.x"
+    },
+    "dependencies": {
+        "cluster": "~0.7.7",
+        "dependable": "~0.2.5",
+        "glob": "~6.0.1",
+        "q": "~1.4.1",
+        "winston": "~2.1.1"
+    },
+    "devDependencies": {
+        "grunt": "~0.4.5",
+        "grunt-contrib-jshint": "~0.11.3",
+        "load-grunt-tasks": "~3.3.0",
+        "time-grunt": "~1.2.2"
+    }
+}
