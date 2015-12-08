@@ -41,9 +41,32 @@ Dolphin.prototype.enableModules = function (files) {
         }
     });
 
+    var i;
+    //init factories
     for (var i in this.modules) {
+        var module = this.modules[i];
         try {
-            this.container.get(this.modules[i].name); // load
+            module.resolveFactories();// load
+        } catch (err) {
+            Dolphin.Singleton.Logger.error(err);
+        }
+    }
+
+    //configure modules
+    for (i in this.modules) {
+        var module = this.modules[i];
+        try {
+            module.resolveConfigurationFactory();// load
+        } catch (err) {
+            Dolphin.Singleton.Logger.error(err);
+        }
+    }
+
+    //exec modules
+    for (i in this.modules) {
+        var module = this.modules[i];
+        try {
+            module.resolveRun();// load
         } catch (err) {
             Dolphin.Singleton.Logger.error(err);
         }
@@ -51,6 +74,13 @@ Dolphin.prototype.enableModules = function (files) {
     return Q.resolve();
 };
 
+/**
+ * Resolve any objects in memory
+ * @param callback
+ */
+Dolphin.prototype.resolveObjects = function (callback) {
+    this.container.resolve(callback);
+}
 
 //include Module logic
 require('./module')(Dolphin);
