@@ -70,7 +70,7 @@ module.exports = function (Dolphin) {
      * @return undefined
      */
     Module.prototype.configureFactories = function (callback) {
-        this.configureFactoryName = this.name + 'ConfigureFactory'
+        this.configureFactoryName = this.name + 'ConfigureFactory';
 
         if (!checkName(this.configureFactoryName)) {
             return;
@@ -96,7 +96,7 @@ module.exports = function (Dolphin) {
      * @return undefined
      */
     Module.prototype.run = function (callback) {
-        this.runName = this.name + 'Run'
+        this.runName = this.name + 'Run';
 
         if (!checkName(this.runName)) {
             return;

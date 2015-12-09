@@ -1,6 +1,6 @@
 {
     "name": "dolphin-core",
-    "version": "0.0.5",
+    "version": "0.0.8",
     "preferGlobal": true,
     "description": "Module loader for node js",
     "author": {
@@ -18,11 +18,10 @@
         "npm": "1.4.x"
     },
     "dependencies": {
-        "cluster": "~0.7.7",
         "dependable": "~0.2.5",
-        "glob": "~6.0.1",
         "q": "~1.4.1",
-        "winston": "~2.1.1"
+        "dolphin-core-utils": "~0.0.1",
+        "dolphin-logger": "~0.0.1"
     },
     "devDependencies": {
         "grunt": "~0.4.5",

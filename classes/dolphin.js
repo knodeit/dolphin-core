@@ -3,9 +3,9 @@
  */
 'use strict';
 
-var ModuleUtil = require('./utils/module');
+var ModuleUtil = require('dolphin-core-utils').Module;
+var Logger = require('dolphin-logger');
 var Q = require('q');
-var path = require('path');
 var container = require('dependable').container();
 
 /**
@@ -22,7 +22,7 @@ function Dolphin() {
  * Run all modules
  * @return null
  */
-Dolphin.prototype.run = function (options) {
+Dolphin.prototype.run = function () {
     return ModuleUtil.findModules().then(function (files) {
         return this.enableModules(files);
     }.bind(this));
@@ -37,38 +37,39 @@ Dolphin.prototype.enableModules = function (files) {
         try {
             require(file.file);
         } catch (err) {
-            Dolphin.Singleton.Logger.error(err);
+            Logger.error(err);
         }
     });
 
     var i;
+    var module;
     //init factories
-    for (var i in this.modules) {
-        var module = this.modules[i];
+    for (i in this.modules) {
+        module = this.modules[i];
         try {
             module.resolveFactories();// load
         } catch (err) {
-            Dolphin.Singleton.Logger.error(err);
+            Logger.error(err);
         }
     }
 
     //configure modules
     for (i in this.modules) {
-        var module = this.modules[i];
+        module = this.modules[i];
         try {
             module.resolveConfigurationFactory();// load
         } catch (err) {
-            Dolphin.Singleton.Logger.error(err);
+            Logger.error(err);
         }
     }
 
     //exec modules
     for (i in this.modules) {
-        var module = this.modules[i];
+        module = this.modules[i];
         try {
             module.resolveRun();// load
         } catch (err) {
-            Dolphin.Singleton.Logger.error(err);
+            Logger.error(err);
         }
     }
     return Q.resolve();
@@ -80,14 +81,7 @@ Dolphin.prototype.enableModules = function (files) {
  */
 Dolphin.prototype.resolveObjects = function (callback) {
     this.container.resolve(callback);
-}
-
-//include Module logic
-require('./modules/base')(Dolphin);
-require('./modules/http')(Dolphin);
-
-//include singleton Module
-Dolphin.prototype.Logger = require('./logger');
+};
 
 /*************************************************************************
  SINGLETON CLASS DEFINITION
@@ -103,6 +97,6 @@ Dolphin.getInstance = function () {
         this.instance = new Dolphin();
     }
     return this.instance;
-}
+};
 
 module.exports = Dolphin.getInstance();
