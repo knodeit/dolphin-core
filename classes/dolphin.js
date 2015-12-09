@@ -3,7 +3,7 @@
  */
 'use strict';
 
-var Module = require('./static/module');
+var ModuleUtil = require('./utils/module');
 var Q = require('q');
 var path = require('path');
 var container = require('dependable').container();
@@ -23,7 +23,7 @@ function Dolphin() {
  * @return null
  */
 Dolphin.prototype.run = function (options) {
-    return Module.findModules().then(function (files) {
+    return ModuleUtil.findModules().then(function (files) {
         return this.enableModules(files);
     }.bind(this));
 };
@@ -83,7 +83,8 @@ Dolphin.prototype.resolveObjects = function (callback) {
 }
 
 //include Module logic
-require('./module')(Dolphin);
+require('./modules/base')(Dolphin);
+require('./modules/http')(Dolphin);
 
 //include singleton Module
 Dolphin.prototype.Logger = require('./logger');
