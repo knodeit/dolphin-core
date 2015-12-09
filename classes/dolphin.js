@@ -75,16 +75,6 @@ Dolphin.prototype.enableModules = function (files) {
     return Q.resolve();
 };
 
-/**
- * Resolve any objects in memory
- * @param callback
- */
-Dolphin.prototype.resolveObjects = function (callback) {
-    this.container.resolve(callback);
-};
-
-require('./modules/base')(Dolphin);
-
 /*************************************************************************
  SINGLETON CLASS DEFINITION
  *************************************************************************/
