@@ -43,7 +43,7 @@ module.exports = function (Dolphin) {
      * @param callback
      * @return undefined
      */
-    Module.prototype.factory = function (name, callback) {
+    Module.prototype.addFactory = function (name, callback) {
         this.factoryName = this.name + name + 'Factory';
 
         if (!checkName(this.factoryName)) {
