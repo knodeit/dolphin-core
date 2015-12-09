@@ -83,6 +83,8 @@ Dolphin.prototype.resolveObjects = function (callback) {
     this.container.resolve(callback);
 };
 
+require('./modules/base')(Dolphin);
+
 /*************************************************************************
  SINGLETON CLASS DEFINITION
  *************************************************************************/
