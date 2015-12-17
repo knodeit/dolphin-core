@@ -1,6 +1,6 @@
 {
     "name": "dolphin-core",
-    "version": "0.0.13",
+    "version": "0.0.14",
     "preferGlobal": true,
     "description": "Module loader for node js",
     "author": {
@@ -14,8 +14,8 @@
         "url": "git+https://github.com/knodeit/dolphin-core.git"
     },
     "engines": {
-        "node": "0.10.x",
-        "npm": "1.4.x"
+        "node": ">=0.10.x",
+        "npm": ">=1.4.x"
     },
     "dependencies": {
         "dependable": "~0.2.5",
