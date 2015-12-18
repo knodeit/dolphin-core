@@ -8,16 +8,18 @@ Requires
 ```npm install dolphin-cli -g```
 
 Run
+
 `dolphin-cli init -t develop test-project`
 
 `cd test-project && npm install && gulp`
 
 You will get the following structure:
 
-packages
+
+    packages
     ---- some package 1
     ---- some package 2
-gulpfile.js    
+    gulpfile.js    
     
 ### Package structure    
 
