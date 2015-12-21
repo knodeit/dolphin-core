@@ -64,17 +64,17 @@ By default you will get these modules:
 
 * [dolphin-cli] (https://github.com/knodeit/dolphin-cli)
 
-* [dolphin-angularjs-modules] (https://github.com/knodeit/dolphin-angularjs-package)
+* [dolphin-angularjs-module] (https://github.com/knodeit/dolphin-angularjs-package)
 
-* [dolphin-asset-manager-modules] (https://github.com/knodeit/dolphin-asset-manager-package)
+* [dolphin-asset-manager-module] (https://github.com/knodeit/dolphin-asset-manager-package)
 
-* [dolphin-html-render-modules] (https://github.com/knodeit/dolphin-html-render-package)
+* [dolphin-html-render-module] (https://github.com/knodeit/dolphin-html-render-package)
 
-* [dolphin-mongoose-modules] (https://github.com/knodeit/dolphin-mongoose-package)
+* [dolphin-mongoose-module] (https://github.com/knodeit/dolphin-mongoose-package)
 
-* [dolphin-server-web-modules] (https://github.com/knodeit/dolphin-server-web-package)
+* [dolphin-server-web-module] (https://github.com/knodeit/dolphin-server-web-package)
 
-* [dolphin-acl-web-modules] (https://github.com/knodeit/dolphin-acl-web-package)
+* [dolphin-acl-web-module] (https://github.com/knodeit/dolphin-acl-web-package)
 
 
 **Notice**
