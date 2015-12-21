@@ -1,6 +1,6 @@
 {
     "name": "dolphin-core",
-    "version": "0.0.16",
+    "version": "0.0.17",
     "preferGlobal": true,
     "description": "Module loader for node js",
     "author": {
