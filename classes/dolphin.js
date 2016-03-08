@@ -80,7 +80,12 @@ Dolphin.prototype.enableModules = function (files) {
  * @param callback
  */
 Dolphin.prototype.resolveObjects = function (callback) {
-    this.container.resolve(callback);
+    try {
+        return this.container.resolve(callback);
+    } catch (e) {
+        Logger.error('Dolphin.prototype.resolveObjects:', e);
+    }
+    return null;
 };
 
 /*************************************************************************
