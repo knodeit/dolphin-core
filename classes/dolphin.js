@@ -84,8 +84,25 @@ Dolphin.prototype.resolveObjects = function (callback) {
         return this.container.resolve(callback);
     } catch (e) {
         Logger.error('Dolphin.prototype.resolveObjects:', e);
+        throw new Error('Module not found');
     }
     return null;
+};
+
+/**
+ * Cron mode
+ * @param callback
+ */
+Dolphin.prototype.isCronMode = function () {
+    return process.env.CRON_MODE !== undefined;
+};
+
+/**
+ * Cron mode
+ * @param callback
+ */
+Dolphin.prototype.isProductionMode = function () {
+    return process.env.NODE_ENV == 'production';
 };
 
 /*************************************************************************
